@@ -8,7 +8,7 @@ from .pagination import CustomPagination
 
 class get_delete_update_ticket(RetrieveUpdateDestroyAPIView):
     serializer_class = TicketSerializer
-    permission_classes = (IsAuthenticated, IsOwnerOrReadOnly,)
+    #permission_classes = (IsAuthenticated, IsOwnerOrReadOnly,)
 
     def get_queryset(self, pk):
         try:
