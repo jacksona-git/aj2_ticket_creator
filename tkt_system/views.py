@@ -10,6 +10,7 @@ class get_delete_update_ticket(RetrieveUpdateDestroyAPIView):
     serializer_class = TicketSerializer
     permission_classes = (IsAuthenticated, IsOwnerOrReadOnly,)
 
+    #base function to get an object from the model (uses primary key)
     def get_queryset(self, pk):
         try:
             ticket = Ticket.objects.get(pk=pk)
@@ -20,7 +21,7 @@ class get_delete_update_ticket(RetrieveUpdateDestroyAPIView):
             return Response(content, status=status.HTTP_404_NOT_FOUND)
         return ticket
 
-    # Get a ticket
+    # Get a ticket and return serialized data
     def get(self, request, pk):
         ticket = self.get_queryset(pk)
         serializer = TicketSerializer(ticket)
