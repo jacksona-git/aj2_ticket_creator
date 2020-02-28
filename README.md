@@ -4,16 +4,17 @@ This ticket system is design to log a ticket for a problem with a vod asset.  I 
 
 There are 3 basic fields
 
-problem_desc  -  This problem you are having 
-asset_name    -  The name of the vod title
-asset_id      -  The asset ID 
+problem_desc  |  This problem you are having 
+asset_name    |  The name of the vod title
+asset_id      |  The asset ID 
+creator       |  The userid associated with the ticket creation
 
 You can perform the basic CRUD operations on the ticket
 
-Create - Create a new incident/ticket
-Read   - Get a single ticket or list of all tickets
-Update - Change paramaters of an exisitng ticket
-Delete - Delet a ticket
+Create | Create a new incident/ticket
+Read   | Get a single ticket or list of all tickets
+Update | Change paramaters of an exisitng ticket
+Delete | Delete a ticket
 
 
 ## Requirements
