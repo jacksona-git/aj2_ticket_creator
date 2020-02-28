@@ -41,7 +41,7 @@ python3.7 manage.py runserver 0.0.0.0:8000
 
 
 
-## REST ENDPOINT DESCRIPTION AND CURL COMMAND
+## REST ENDPOINT DESCRIPTION AND CURL COMMANDS
 
 
 
@@ -91,8 +91,6 @@ PUT/MODIFY A TICKET http://localhost:8000/api/v1/tickets/:ID
 ```
 curl  -X PUT -d "problem_desc='asset freezes'&asset_name='matrix reloaded'&asset_id=XYX123" http://localhost:8000/api/v1/tickets/1 -H 'Authorization: Token 8bdac90872d706180f0082b371fe2ee760515bc1'
 ```
-
-
 
 PAGINATION http://localhost:8000/api/v1/tickets/?page=<page no>
 
