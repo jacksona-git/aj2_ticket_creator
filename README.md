@@ -4,6 +4,9 @@ This ticket system is design to log a ticket for a problem with a vod asset.  I 
 
 There are 3 basic fields
 
+Field |Desc
+-- | -- 
+
 problem_desc  |  This problem you are having 
 asset_name    |  The name of the vod title
 asset_id      |  The asset ID 
