@@ -1,5 +1,21 @@
 # SIMPLE CRUD API FOR CREATING TICKETS
 
+This ticket system is design to log a ticket for a problem with a vod asset.  I was created using Python and Django framework
+
+There are 3 basic fields
+
+problem_desc  -  This problem you are having 
+asset_name    -  The name of the vod title
+asset_id      -  The asset ID 
+
+You can perform the basic CRUD operations on the ticket
+
+Create - Create a new incident/ticket
+Read   - Get a single ticket or list of all tickets
+Update - Change paramaters of an exisitng ticket
+Delete - Delet a ticket
+
+
 ## Requirements
 - Python 3.6
 - Django (2.1)
@@ -15,19 +31,7 @@
         pip install django-extensions
 ```
 
-## Structure
-
-Contains a single resource tickets with the following methods 
-
-Endpoint |HTTP Method | CRUD Method | Result
--- | -- |-- |--
-`tickets` | GET | READ | Get all ticket
-`tickets/:id` | GET | READ | Get a single ticket
-`tickets`| POST | CREATE | Create a new ticket
-`tickets/:id` | PUT | UPDATE | Update a ticket
-`tickets/:id` | DELETE | DELETE | Delete a ticket
-
-## HOW TO USE
+## REST ENDPOINT DESCRIPTION AND CURL COMMAND
 
 
 Start the Django server with 
@@ -37,27 +41,37 @@ python3.7 manage.py runserver 0.0.0.0:8000
 ```
 
 
-CREATE ACCOUNT TO GET TOKEN
+CREATE ACCOUNT TO GET TOKEN  http://localhost:8000/rest-auth/registration/ 
 
 ```
 curl -d "username=adam&password1=bogus12345&password2=bogus12345" -X POST http://localhost:8000/rest-auth/registration/ 
 ```
 
 
-GET TOKEN 
+GET TOKEN  http://localhost:8000/rest-auth/login/
+```
 
 ```
 curl -d "username=adam&password=bogus12345" -X POST http://localhost:8000/rest-auth/login/
 ```
 
 
-CREATE A TICKET
+CREATE A TICKET http://localhost:8000/api/v1/tickets/
+
 
 ```
 curl  -X POST -d "problem_desc='asset won't play'&asset_name='matrix reloaded'&asset_id=XYX123" http://localhost:8000/api/v1/tickets/ -H 'Authorization: Token 8bdac90872d706180f0082b371fe2ee760515bc1'
 ```
 
-READ/GET
+READ/GET ALL TICKETS http://localhost:8000/api/v1/tickets/
+```
+curl  -X GET http://localhost:8000/api/v1/tickets/ -H 'Authorization: Token 8bdac90872d706180f0082b371fe2ee760515bc1'
+```
+
+
+
+
+READ/GET A SINGLE TICKET http://localhost:8000/api/v1/tickets/:ID
 ```
 curl  -X GET http://localhost:8000/api/v1/tickets/1 -H 'Authorization: Token 8bdac90872d706180f0082b371fe2ee760515bc1'
 ```
@@ -67,7 +81,7 @@ DELETE
 curl  -X DELETE http://localhost:8000/api/v1/tickets/1 -H 'Authorization: Token 8bdac90872d706180f0082b371fe2ee760515bc1'
 ```
 
-PUT/MODIFY
+PUT/MODIFY A TICKET http://localhost:8000/api/v1/tickets/:ID
 
 ```
 curl  -X PUT -d "problem_desc='asset freezes'&asset_name='matrix reloaded'&asset_id=XYX123" http://localhost:8000/api/v1/tickets/1 -H 'Authorization: Token 8bdac90872d706180f0082b371fe2ee760515bc1'
@@ -75,7 +89,7 @@ curl  -X PUT -d "problem_desc='asset freezes'&asset_name='matrix reloaded'&asset
 
 
 
-PAGINATION
+PAGINATION http://localhost:8000/api/v1/tickets/?page=<page no>
 
 Page Sizes are set to 10 items.   You can access the next page with page=x
 ```
