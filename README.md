@@ -31,14 +31,19 @@ Delete - Delet a ticket
         pip install django-extensions
 ```
 
-## REST ENDPOINT DESCRIPTION AND CURL COMMAND
-
 
 Start the Django server with 
 
 ```
 python3.7 manage.py runserver 0.0.0.0:8000
 ```
+
+
+
+
+## REST ENDPOINT DESCRIPTION AND CURL COMMAND
+
+
 
 
 CREATE ACCOUNT TO GET TOKEN  http://localhost:8000/rest-auth/registration/ 
@@ -49,7 +54,7 @@ curl -d "username=adam&password1=bogus12345&password2=bogus12345" -X POST http:/
 
 
 GET TOKEN  http://localhost:8000/rest-auth/login/
-```
+
 
 ```
 curl -d "username=adam&password=bogus12345" -X POST http://localhost:8000/rest-auth/login/
