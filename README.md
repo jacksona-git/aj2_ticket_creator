@@ -13,10 +13,12 @@ Field |Desc
 
 You can perform the basic CRUD operations on the ticket
 
-Create | Create a new incident/ticket
-Read   | Get a single ticket or list of all tickets
-Update | Change paramaters of an exisitng ticket
-Delete | Delete a ticket
+Operation |Desc
+-- | -- 
+`Create` | Create a new incident/ticket
+`Read`   | Get a single ticket or list of all tickets
+`Update` | Change paramaters of an exisitng ticket
+`Delete` | Delete a ticket
 
 
 ## Requirements
