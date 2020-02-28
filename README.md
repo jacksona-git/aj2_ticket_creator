@@ -6,11 +6,10 @@ There are 3 basic fields
 
 Field |Desc
 -- | -- 
-
-problem_desc  |  This problem you are having 
-asset_name    |  The name of the vod title
-asset_id      |  The asset ID 
-creator       |  The userid associated with the ticket creation
+`problem_desc`  |  This problem you are having 
+`asset_name`    |  The name of the vod title
+`asset_id`      |  The asset ID 
+`creator`       |  The userid associated with the ticket creation
 
 You can perform the basic CRUD operations on the ticket
 
