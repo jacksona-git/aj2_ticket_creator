@@ -43,6 +43,12 @@ Start the Django server with
 python3.7 manage.py runserver 0.0.0.0:8000
 ```
 
+## TESTING 
+test cases are located in /tkt_system/test.py
+
+Run
+
+python3.7 manage.py test
 
 
 
