@@ -57,5 +57,26 @@ class TestPoll(APITestCase):
 
         self.assertEqual(response.status_code, 201)
 
+        
+        
+
+    def test_create_and_read_single(self):
+        print("Create ticket and read back using endpoint ")
+        self.client.login(username=self.username, password=self.password)
+        response = self.client.post('/rest-auth/login/', {'username': 'admin', 'password' : 'root1234'},format='json')
+
+        auth_info = json.loads(response.content)
+
+        self.client.credentials(HTTP_AUTHORIZATION='Token ' +  auth_info['key'])
+
+        response = self.client.post('/api/v1/tickets/', {'problem_desc': 'broken', 'asset_name': 'top gun', 'asset_id': '123xyz', 'creator' : 'admin'}, format='json')
+
+        response = self.client.get('/api/v1/tickets/1', format='json')
+
+
+
+        self.assertEqual(response.status_code, 200)
+
+
 
 
