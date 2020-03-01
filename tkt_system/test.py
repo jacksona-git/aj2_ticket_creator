@@ -108,6 +108,24 @@ class TestPoll(APITestCase):
 
 
         self.assertEqual(response.status_code, 201)
+        
+        
+        
+    def test_delete(self):
+        print("Running test for delete operation ")
+        self.client.login(username=self.username, password=self.password)
+        response = self.client.post('/rest-auth/login/', {'username': 'admin', 'password' : 'root1234'},format='json')
+
+        auth_info = json.loads(response.content)
+
+        self.client.credentials(HTTP_AUTHORIZATION='Token ' +  auth_info['key'])
+
+        response = self.client.post('/api/v1/tickets/', {'problem_desc': 'broken', 'asset_name': 'top gun', 'asset_id': '123xyz', 'creator' : 'admin'}, format='json')
+
+        response = self.client.delete('/api/v1/tickets/1', format='json')
+
+
+        self.assertEqual(response.status_code, 204)
 
 
 
