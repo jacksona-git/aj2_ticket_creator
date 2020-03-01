@@ -48,8 +48,9 @@ test cases are located in /tkt_system/test.py
 
 Run
 
+```
 python3.7 manage.py test
-
+```
 
 
 ## REST ENDPOINT DESCRIPTION AND CURL COMMANDS
