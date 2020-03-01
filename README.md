@@ -34,6 +34,7 @@ Operation |Desc
 	pip install django-rest-auth
 	pip install django-allauth
         pip install django-extensions
+	pip install coverage
 ```
 
 
@@ -49,9 +50,13 @@ test cases are located in /tkt_system/test.py
 Run
 
 ```
-python3.7 manage.py test
+coverage run manage.py test
 ```
 
+Report
+```
+coverage report -m
+```
 
 ## REST ENDPOINT DESCRIPTION AND CURL COMMANDS
 
