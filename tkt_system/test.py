@@ -26,4 +26,18 @@ class TestPoll(APITestCase):
         response = self.client.post('/rest-auth/login/', {'username': 'admin', 'password' : 'root1234'},format='json')
         auth_info = json.loads(response.content)
         self.assertEqual(response.status_code, 200)
+        
+        
+    def test_read_get(self):
+        print("Running test for GET/READ request")
+        self.client.login(username=self.username, password=self.password)
+        response = self.client.post('/rest-auth/login/', {'username': 'admin', 'password' : 'root1234'},format='json')
+
+        auth_info = json.loads(response.content)
+
+        self.client.credentials(HTTP_AUTHORIZATION='Token ' +  auth_info['key'])
+        response2 = self.client.get('/api/v1/tickets/', format='json')
+
+
+        self.assertEqual(response2.status_code, 200)
 
