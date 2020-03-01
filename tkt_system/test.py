@@ -104,7 +104,7 @@ class TestPoll(APITestCase):
 
         response = self.client.post('/api/v1/tickets/', {'problem_desc': 'broken', 'asset_name': 'top gun', 'asset_id': '123xyz', 'creator' : 'admin'}, format='json')
 
-        response = self.client.put('/api/v1/tickets/1', {'problem_desc': 'broken', 'asset_name': 'top gun', 'asset_id': '123xyz', 'creator' : 'admin'}, format='json')
+        response = self.client.put('/api/v1/tickets/1', {'problem_desc': 'partially working now', 'asset_name': 'top gun', 'asset_id': '123xyz', 'creator' : 'admin'}, format='json')
 
 
         self.assertEqual(response.status_code, 201)
