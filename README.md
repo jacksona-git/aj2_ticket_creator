@@ -45,7 +45,7 @@ python3.7 manage.py runserver 0.0.0.0:8000
 ```
 
 ## TESTING 
-test cases are located in /tkt_system/test.py
+test cases are located in /tkt_system/test.py.    Coverage is > 90%
 
 Run
 
